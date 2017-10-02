@@ -12,9 +12,13 @@ describe('function add', () => {
         expect(resultat).toBe(-4)
     });
 
-    it('should concatenate if there are string params', () => {
-        let resultat = add('bloup', 2)
-        expect(resultat).toBe('bloup2')
+    // it('should concatenate if there are string params', () => {
+    //     let resultat = add('bloup', 2)
+    //     expect(resultat).toBe('bloup2')
+    // });
+
+    it('should throw arror with string params', () => {
+        expect(add.bind(null, 'bloup' + 2)).toThrow(new Error('expect numbers as parameters'));
     });
 
 });
