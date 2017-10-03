@@ -3,7 +3,6 @@ describe('class Compteur', () => {
 
     beforeEach(() => {
         compteur = new Compteur();
-
     })
 
     it('should be initialize to zero', () => {
