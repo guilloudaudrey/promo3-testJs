@@ -1,13 +1,16 @@
 class Comptable {
-    constructor(calculette) {
-        this.calculette = calculette;
+    constructor() {
+        this.calculette = new Calculette();
     }
 
     getBenefices(recettes, salaires, tva) {
-        let recetteTaxee = this.calculette.calcul(recettes, tva, '/');
-        if (recetteTaxee > salaires) {
-            return this.calculette.calcul(recetteTaxee, salaires, '-')
+        let recetteTaxees = this.calculette.calcul(recettes, tva, '*');
+        if (recetteTaxees > salaires) {
+            return this.calculette.calcul(recetteTaxees, salaires, '-');
         }
-        return 'en faillite'
+        return 'en faillite';
+
     }
+
+
 }
